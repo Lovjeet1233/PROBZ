@@ -25,7 +25,7 @@ function TableExample() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/students');
+        const response = await fetch('https://probz-1.onrender.com/api/students');
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
