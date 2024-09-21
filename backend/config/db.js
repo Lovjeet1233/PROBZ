@@ -18,15 +18,15 @@
 // module.exports = connection;
 
 
+require('dotenv').config(); // Add this line to load .env variables
 const mysql = require('mysql2');
 
-// MySQL connection using environment variables
 const connection = mysql.createConnection({
-  host: 'mysql-150caa12-singhlovjeet01-fe15.i.aivencloud.com', // from the screenshot
-  user: 'avnadmin',       // replace with your username from the URI
-  password: 'AVNS_3ClAUSKd-KSOq_SRU5R', // password from the URI
-  database: 'studentDB',  // database name from the screenshot
-  port: 27233,            // port number from the screenshot
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 connection.connect((err) => {
